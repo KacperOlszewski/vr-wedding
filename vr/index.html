@@ -6,16 +6,19 @@
   </head>
   <body>
     <!-- When you're ready to deploy your app, update this line to point to your compiled client.bundle.js -->
+
+      <input id="pass" type="text" placeholder="type password">
+      <button onclick="password()">Click me</button>
+
     <script src="./client.bundle?platform=vr"></script>
     <script>
-      // Initialize the React VR application
-      ReactVR.init(
-        // When you're ready to deploy your app, update this line to point to
-        // your compiled index.bundle.js
-        '../index.vr.bundle?platform=vr&dev=true',
-        // Attach it to the body tag
-        document.body
-      );
+      function password() {
+          ReactVR.init(
+              '../index.vr.bundle?platform=vr&dev=true',
+              document.body
+          );
+      }
+
     </script>
   </body>
 </html>

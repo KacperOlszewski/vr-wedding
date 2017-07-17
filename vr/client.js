@@ -1,21 +1,26 @@
-// Auto-generated content.
-// This file contains the boilerplate to set up your React app.
-// If you want to modify your application, start in "index.vr.js"
+import { checkPassword, authorize, showAuthSection } from './auth';
+import { LocalStorage, keys } from './utils/localStorage';
+import { bootstrap } from './bootstrap';
+import { UserService } from './utils/userService';
 
-// Auto-generated content.
-import {VRInstance} from 'react-vr-web';
+window.usrService = UserService;
+window.onload = function () {
+    const store = new LocalStorage();
+    const token = store.get(keys.token);
 
-function init(bundle, parent, options) {
-  const vr = new VRInstance(bundle, 'WeddingSite', parent, {
-    // Add custom options here
-    ...options,
-  });
-  vr.render = function() {
-    // Any custom behavior you want to perform on each frame goes here
-  };
-  // Begin the animation loop
-  vr.start();
-  return vr;
-}
-
-window.ReactVR = {init};
+    if (token) {
+      authorize(token).then(
+          (user) => {
+            bootstrap(user.bundle, document.body)
+          },
+          () => {
+              store.remove(keys.token);
+              window.checkPass = checkPassword;
+              showAuthSection();
+          }
+      )
+    } else {
+        window.checkPass = checkPassword;
+        showAuthSection();
+    }
+};
