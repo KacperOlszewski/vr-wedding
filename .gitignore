@@ -5,4 +5,5 @@
 node_modules/
 build/
 vr/build/
-.idea
+.idea/workspace.xml
+.idea/

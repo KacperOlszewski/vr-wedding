@@ -1,6 +1,6 @@
 const users = {
     123456: {
-        name: "Muszla", going: false, house: null, token: 123456
+        name: "Muszla", going: false, house: null, token: 123456, fbId: 100000243531643
     },
 
     hack: {

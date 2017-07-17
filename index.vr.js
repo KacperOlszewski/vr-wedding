@@ -1,5 +1,6 @@
 import React from 'react';
 import { MyHttp } from './vr/utils/http';
+import { thumb } from './components/thumb';
 import { keys } from './vr/utils/localStorage';
 import { UserService } from './vr/utils/userService';
 import {
@@ -48,7 +49,15 @@ export default class WeddingSite extends React.Component {
                 (user) => {
                     this.user = user;
                     this.state.text = user.name;
-                    console.log('user:', user)
+
+                    thumb(user.fbId).then(
+                        (img) => {
+                            console.log(img)
+                        },
+                        (err) => {
+                            console.log('error')
+                        }
+                    )
                 },
                 (err) => {
                     console.log('error')

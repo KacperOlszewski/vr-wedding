@@ -3,9 +3,10 @@ import { VRInstance } from 'react-vr-web';
 export function bootstrap(bundle, parent, options) {
     destroyPasswordSection();
 
-    const vr = new VRInstance(bundle, 'WeddingSite', parent, {
-        ...options
-    });
+    const vr = new VRInstance(bundle, 'WeddingSite', parent,
+        {cursorAutoHide: true},
+        {...options}
+    );
 
     vr.render = function() {
         // Any custom behavior you want to perform on each frame goes here
