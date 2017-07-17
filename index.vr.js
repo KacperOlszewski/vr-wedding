@@ -1,8 +1,7 @@
 import React from 'react';
 import { MyHttp } from './vr/utils/http';
 import { thumb } from './components/thumb';
-import { keys } from './vr/utils/localStorage';
-import { UserService } from './vr/utils/userService';
+
 import {
     AppRegistry,
     AsyncStorage,
@@ -49,10 +48,20 @@ export default class WeddingSite extends React.Component {
                 (user) => {
                     this.user = user;
                     this.state.text = user.name;
+                    console.log(this.user.going);
 
                     thumb(user.fbId).then(
                         (img) => {
-                            console.log(img)
+
+                            this.user.going = true;
+                            this.http.post(`/api/user/going`, this.user).then(
+                                (err) => {
+                                    console.log('succ')
+                                },
+                                (err) => {
+                                    console.log('error')
+                                }
+                            );
                         },
                         (err) => {
                             console.log('error')
@@ -60,7 +69,7 @@ export default class WeddingSite extends React.Component {
                     )
                 },
                 (err) => {
-                    console.log('error')
+                    console.log('Mamy błęd')
                 }
             );
     }

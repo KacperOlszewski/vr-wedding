@@ -10,7 +10,6 @@ module.exports = function(port) {
     server.use(bodyParser.urlencoded({ extended: true }));
 
     authorize(server, api);
-
     server.listen(port);
 
     console.log('Server start: ' + port);
