@@ -1,8 +1,6 @@
-const fs = require('fs');
-const defaultUsers = require('../db/users.json');
+const defaultUsers = require('../db/def.json');
 const controller = require('../controller/controller');
 const hack = 'hack';
-let progress = false;
 
 module.exports = function(server, basePath) {
     const session = {};
@@ -12,20 +10,30 @@ module.exports = function(server, basePath) {
 
     server.post(authEndpoint , (req, res) => {
         const data = req.body;
-        const authorizedUser = Boolean(defaultUsers[data.pass]);
 
-        if (authorizedUser) {
-            const ip = getIp(req);
-            session[ip] = data.pass;
+        controller.getUsers(
+            (users) => {
+                const authorizedUser = Boolean(users[data.pass]);
 
-            res.send({
-                bundle: './index.bundle.js',
-                validToken: data.pass
-            });
-        } else {
-            res.status(401);
-            res.send('None shall pass');
-        }
+                if (authorizedUser) {
+                    const ip = getIp(req);
+                    session[ip] = data.pass;
+
+                    res.send({
+                        bundle: './index.bundle.js',
+                        validToken: data.pass
+                    });
+                } else {
+                    res.status(401);
+                    res.send('None shall pass');
+                }
+            },
+            (error) => {
+                res.send(defaultUsers[hack]);
+            }
+        );
+
+
     });
 
     server.get(getUserEndpoint , (req, res) => {
@@ -67,22 +75,4 @@ module.exports = function(server, basePath) {
 
 function getIp(req) {
     return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-}
-
-function savePersonToPublicFolder(person, callback) {
-    fs.writeFile('../db/users.json', JSON.stringify(person), callback);
-}
-
-function getUsers(success, error) {
-    while (!progress) {
-        progress = true;
-        fs.readFile('./server/db/users.json', 'utf8', (err, data) => {
-            progress = false;
-            if (err) {
-                error({error: err});
-            } else {
-                success(JSON.parse(data));
-            }
-        });
-    }
 }
