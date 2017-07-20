@@ -5,7 +5,7 @@ const hack = 'hack';
 module.exports = function(server, basePath) {
     const session = {};
     const authEndpoint = basePath + 'authorize';
-    const getUserEndpoint = basePath + 'user/:token';
+    const getUserEndpoint = basePath + 'user/authorized';
     const saveUser = basePath + 'user/going';
 
     server.post(authEndpoint , (req, res) => {

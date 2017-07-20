@@ -8,6 +8,7 @@ import {
 export class Button extends React.Component {
     constructor() {
         super();
+
         this.styles = StyleSheet.create({
             button: {
                 margin: 0.05,
@@ -32,7 +33,6 @@ export class Button extends React.Component {
                 <Text style={this.styles.text}>
                     {this.props.text}
                 </Text>
-
             </VrButton>
         );
     }

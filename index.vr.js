@@ -1,6 +1,7 @@
 import React from 'react';
 import { MyHttp } from './vr/utils/http';
 import { thumb } from './components/thumb';
+import { WelcomeView } from './views/welcome-view';
 
 import {
     AppRegistry,
@@ -28,27 +29,15 @@ export default class WeddingSite extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
-
-
-        this.styles = StyleSheet.create({
-            menu: {
-                flex: 1,
-                flexDirection: 'column',
-                width: 1.4,
-                alignItems: 'stretch',
-                transform: [{translate: [2, 2, -5]}]
-            }
-        });
     }
 
     componentDidMount() {
-        this.http.get(`/api/user/1234`)
+        this.http.get(`/api/user/authorized`)
             .then(
                 (user) => {
                     this.user = user;
                     this.state.text = user.name;
-                    console.log(this.user.going);
+                    console.log(this.user);
 
                     thumb(user.fbId).then(
                         (img) => {
@@ -96,7 +85,7 @@ export default class WeddingSite extends React.Component {
                         asset('wall-back.jpg')
                     ]
                 }/>
-                <AmbientLight intensity={ 21.6 }/>
+
                 <Text style={{
                     backgroundColor: '#777879',
                     fontSize: 0.6,
@@ -113,11 +102,8 @@ export default class WeddingSite extends React.Component {
                 }}>
                     hello there
                 </Text>
-                <View style={this.styles.menu}>
-                    <Text>
-                        {this.state.text}
-                    </Text>
-                </View>
+
+                <WelcomeView></WelcomeView>
             </View>
         );
     }
