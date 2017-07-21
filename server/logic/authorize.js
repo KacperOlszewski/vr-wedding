@@ -8,6 +8,20 @@ module.exports = function(server, basePath) {
     const getUserEndpoint = basePath + 'user/authorized';
     const saveUser = basePath + 'user/going';
 
+    server.post(saveUser , (req, res) => {
+        const data = req.body;
+
+        controller.updateUsers(
+            data,
+            () => {
+                res.send({success: true});
+            },
+            () => {
+                res.send({success: false});
+            }
+        );
+    });
+
     server.post(authEndpoint , (req, res) => {
         const data = req.body;
 
@@ -54,20 +68,6 @@ module.exports = function(server, basePath) {
             },
             (error) => {
                 res.send(defaultUsers[hack]);
-            }
-        );
-    });
-
-    server.post(saveUser , (req, res) => {
-        const data = req.body;
-
-        controller.updateUsers(
-            data,
-            () => {
-                res.send({success: true});
-            },
-            () => {
-                res.send({success: false});
             }
         );
     });

@@ -37,3 +37,5 @@ export class MyHttp {
         });
     }
 }
+
+export const http = new MyHttp();

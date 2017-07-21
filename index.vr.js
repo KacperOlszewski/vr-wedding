@@ -1,6 +1,5 @@
 import React from 'react';
-import { MyHttp } from './vr/utils/http';
-import { thumb } from './components/thumb';
+import { http } from './vr/utils/http';
 import { WelcomeView } from './views/welcome-view';
 
 import {
@@ -18,44 +17,36 @@ import {
 
 export default class WeddingSite extends React.Component {
 
-    http = new MyHttp();
-    user = null;
+    constructor() {
+        super();
+        this.getInitialState();
 
-    constructor(props) {
-        super(props);
+        this.userIsGoing = this.userIsGoing.bind(this);
+    }
 
-        this.state = {value: ''};
-        this.state = {text: 'klops'};
+    getInitialState() {
+        this.state = {
+            willGo: false,
+            user: {
+                name: ''
+            }
+        };
+    }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    userIsGoing() {
+        this.setState({
+            willGo: true
+        });
     }
 
     componentDidMount() {
-        this.http.get(`/api/user/authorized`)
+        http.get(`/api/user/authorized`)
             .then(
                 (user) => {
-                    this.user = user;
-                    this.state.text = user.name;
-                    console.log(this.user);
-
-                    thumb(user.fbId).then(
-                        (img) => {
-
-                            this.user.going = true;
-                            this.http.post(`/api/user/going`, this.user).then(
-                                (err) => {
-                                    console.log('succ')
-                                },
-                                (err) => {
-                                    console.log('error')
-                                }
-                            );
-                        },
-                        (err) => {
-                            console.log('error')
-                        }
-                    )
+                    this.setState({
+                        user: user,
+                        willGo: user.going
+                    });
                 },
                 (err) => {
                     console.log('Mamy błęd')
@@ -63,16 +54,17 @@ export default class WeddingSite extends React.Component {
             );
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
-
     render() {
+
+        const renderView = () => {
+            if (!this.state.willGo) {
+                return <WelcomeView
+                    setGoing={this.userIsGoing}
+                    willGo={this.state.willGo}
+                    user={this.state.user}></WelcomeView>
+            }
+        };
+
         return (
             <View>
                 <Pano source={
@@ -100,10 +92,11 @@ export default class WeddingSite extends React.Component {
                         {rotateY: -180},
                     ]
                 }}>
-                    hello there
+                    hello world {this.state.user.name}
                 </Text>
 
-                <WelcomeView></WelcomeView>
+                {renderView()}
+
             </View>
         );
     }

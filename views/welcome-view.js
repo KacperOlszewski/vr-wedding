@@ -5,9 +5,11 @@ import {
     View
 } from 'react-vr';
 
+import { http } from '../vr/utils/http';
 import { Button } from '../components/button'
 
 export class WelcomeView extends React.Component {
+
     constructor() {
         super();
         this.state = {
@@ -19,35 +21,54 @@ export class WelcomeView extends React.Component {
                 layoutOrigin: [0.5, 0.5],
                 flexDirection: 'column',
                 alignItems: 'stretch',
-                transform: [{translate: [0, 1, -8]}]
+                transform: [{translate: [0, 2, -8]}]
+            },
+            text: {
+                backgroundColor: '#777879',
+                fontSize: 0.4,
+                fontWeight: '400',
+                textAlign: 'center',
+                textAlignVertical: 'center'
             }
         });
 
-
-        this.saveYes.bind(this);
+        this.yes.bind(this);
     }
 
-    saveYes() {
-        this.setState({ welcomeText: "Koleżko"});
+    yes() {
+        const user = this.props.user;
+        user.going = true;
+
+        http.post(`/api/user/going`, user).then(
+            (succ) => {
+                this.props.setGoing();
+                console.log('user idzie');
+            },
+            (err) => {
+                console.log('error');
+            }
+        );
     }
 
     render() {
-        return (
-            <View style={this.styles.menu}>
-                <Text style={{
-                    backgroundColor: '#777879',
-                    fontSize: 0.4,
-                    fontWeight: '400',
-                    textAlign: 'center',
-                    textAlignVertical: 'center'
-                }}>
-                    {this.state.welcomeText}
-                </Text>
-
+        const isGoing = () => {
+            return this.props.willGo ?
                 <Button
                     text='Tak!'
-                    callback={() => this.saveYes()}/>
+                    callback={() => this.yes()}/> :
 
+                <Button
+                    text='nie!'
+                    callback={() => this.yes()}/>
+        };
+
+        return (
+            <View style={this.styles.menu}>
+                <Text style={this.styles.text}>
+                    {this.state.welcomeText} {this.props.user.name}
+                </Text>
+
+                {isGoing()}
             </View>
         );
     }
