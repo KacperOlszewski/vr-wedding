@@ -3,6 +3,18 @@
     "name": "Muszla", "going": false, "house": null, "token": 123456, "fbId": 100000243531643
   },
 
+  "234567": {
+    "name": "Szwajc", "going": true, "house": null, "token": 234567, "fbId": 100000243531643
+  },
+
+  "345678": {
+    "name": "Grzyb", "going": true, "house": null, "token": 345678, "fbId": 100000243531643
+  },
+
+  "456789": {
+    "name": "Grzyb", "going": true, "house": {"1":1}, "token": 456789, "fbId": 100000243531643
+  },
+
   "hack": {
     "name": "U hack, u suck", "going": false, "house": null, "token": 123456
   }

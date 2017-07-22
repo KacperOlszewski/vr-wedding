@@ -1,6 +1,9 @@
 import React from 'react';
 import { http } from './vr/utils/http';
 import { WelcomeView } from './views/welcome-view';
+import { InstructionView } from './views/instruction-view';
+import { UsersView } from './views/users-view';
+import { Thumb } from './components/thumb';
 
 import {
     AppRegistry,
@@ -17,16 +20,16 @@ import {
 
 export default class WeddingSite extends React.Component {
 
-    constructor() {
-        super();
-        this.getInitialState();
-
+    constructor(props) {
+        super(props);
+        this.setInitialState();
+        this.start();
         this.userIsGoing = this.userIsGoing.bind(this);
     }
 
-    getInitialState() {
+    setInitialState() {
         this.state = {
-            willGo: false,
+            willGo: true,
             user: {
                 name: ''
             }
@@ -39,7 +42,7 @@ export default class WeddingSite extends React.Component {
         });
     }
 
-    componentDidMount() {
+    start() {
         http.get(`/api/user/authorized`)
             .then(
                 (user) => {
@@ -55,15 +58,7 @@ export default class WeddingSite extends React.Component {
     }
 
     render() {
-
-        const renderView = () => {
-            if (!this.state.willGo) {
-                return <WelcomeView
-                    setGoing={this.userIsGoing}
-                    willGo={this.state.willGo}
-                    user={this.state.user}></WelcomeView>
-            }
-        };
+        const willGo = this.state.willGo;
 
         return (
             <View>
@@ -78,24 +73,26 @@ export default class WeddingSite extends React.Component {
                     ]
                 }/>
 
-                <Text style={{
-                    backgroundColor: '#777879',
-                    fontSize: 0.6,
-                    fontWeight: '400',
-                    layoutOrigin: [0.5, 0.5],
-                    paddingLeft: 0.2,
-                    paddingRight: 0.2,
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
-                    transform: [
-                        {translate: [0, 0, 3]},
-                        {rotateY: -180},
-                    ]
-                }}>
-                    hello world {this.state.user.name}
-                </Text>
+                {willGo &&
+                <View style={{ position: 'absolute'}}>
+                    <InstructionView></InstructionView>
+                </View>
+                }
 
-                {renderView()}
+                {willGo &&
+                    <View style={{ position: 'absolute'}}>
+                        <UsersView></UsersView>
+                    </View>
+                }
+
+                {!willGo &&
+                    <WelcomeView
+                        setGoing={this.userIsGoing}
+                        user={this.state.user}>
+                    </WelcomeView>
+                }
+
+
 
             </View>
         );

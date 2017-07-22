@@ -11,13 +11,14 @@ export class Button extends React.Component {
 
         this.styles = StyleSheet.create({
             button: {
-                margin: 0.05,
-                height: 0.4,
-                backgroundColor: 'red',
-                borderRadius: 0.1
+                display: 'flex',
+                padding: 0.1,
+                margin: 0.2,
+                backgroundColor: 'blue',
+                borderRadius: 0.2
             },
             text: {
-                fontSize: 0.3,
+                fontSize: 0.6,
                 fontWeight: 'bold',
                 textAlign: 'center'
             }
