@@ -3,7 +3,7 @@ import { http } from './vr/utils/http';
 import { WelcomeView } from './views/welcome-view';
 import { InstructionView } from './views/instruction-view';
 import { UsersView } from './views/users-view';
-import { Thumb } from './components/thumb';
+import { VideoView } from './views/video-view';
 
 import {
     AppRegistry,
@@ -34,6 +34,10 @@ export default class WeddingSite extends React.Component {
                 name: ''
             }
         };
+
+        this.styles = StyleSheet.create({
+            view: { position: 'absolute'}
+        });
     }
 
     userIsGoing() {
@@ -64,23 +68,29 @@ export default class WeddingSite extends React.Component {
             <View>
                 <Pano source={
                     [
+                        asset('wall-left.jpg'),
+                        asset('wall-right.jpg'),
+                        asset('wall-top.jpg'),
+                        asset('wall-bottom.jpg'),
                         asset('wall-back.jpg'),
-                        asset('wall-back.jpg'),
-                        asset('wall-back.jpg'),
-                        asset('wall-back.jpg'),
-                        asset('wall-back.jpg'),
-                        asset('wall-back.jpg')
+                        asset('wall-front.jpg')
                     ]
                 }/>
 
                 {willGo &&
-                <View style={{ position: 'absolute'}}>
-                    <InstructionView></InstructionView>
-                </View>
+                    <View style={this.styles.view}>
+                        <InstructionView></InstructionView>
+                    </View>
                 }
 
                 {willGo &&
-                    <View style={{ position: 'absolute'}}>
+                    <View style={this.styles.view}>
+                        <VideoView></VideoView>
+                    </View>
+                }
+
+                {willGo &&
+                    <View style={this.styles.view}>
                         <UsersView></UsersView>
                     </View>
                 }

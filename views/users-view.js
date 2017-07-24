@@ -39,9 +39,11 @@ export class UsersView extends React.Component {
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    backgroundColor: '#777879',
-                    layoutOrigin: [0.5, 0.5],
                     width: 6,
+                    backgroundColor: 'rgba(0,0,0,0.26)',
+                    borderRadius: 0.2,
+                    layoutOrigin: [0.5, 0.5],
+                    padding: 0.2,
                     transform: [
                         {translate: [0, 0, 5]},
                         {rotateY: -180},

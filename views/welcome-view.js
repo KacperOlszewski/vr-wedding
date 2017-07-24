@@ -15,24 +15,25 @@ export class WelcomeView extends React.Component {
         super();
         this.state = {
             welcomeText: "Cześć",
-            bounceValue: new Animated.Value(0),
+            bounceValue: new Animated.Value(1),
             bounceOut: new Animated.Value(0.8)
         };
 
         this.styles = StyleSheet.create({
             menu: {
-                width: 8,
+                width: 6,
                 backgroundColor: 'rgba(0,0,0,0.26)',
                 borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
+                padding: 0.2,
                 transform: [
-                    {translate: [0, 2, -8]},
+                    {translate: [0, 0, -8]},
                     {scale: this.state.bounceValue}
                 ]
             },
             text: {
                 color: '#fff',
-                fontSize: 0.6,
+                fontSize: 0.5,
                 fontWeight: '400',
                 textAlign: 'center',
                 textAlignVertical: 'center'
@@ -43,7 +44,7 @@ export class WelcomeView extends React.Component {
     }
 
     componentDidMount() {
-        this.state.bounceValue.setValue(1.4);
+        this.state.bounceValue.setValue(1.2);
         Animated.spring(
             this.state.bounceValue,
             {
@@ -64,12 +65,12 @@ export class WelcomeView extends React.Component {
                     this.state.bounceValue,
                     {
                         toValue: 0.01,
-                        duration: 270
+                        duration: 360
                     }
                 ).start();
 
                 setTimeout(
-                    () => this.props.setGoing(), 251
+                    () => this.props.setGoing(), 361
                 );
             },
             (err) => {

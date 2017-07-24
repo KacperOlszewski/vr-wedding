@@ -24,7 +24,7 @@ export class Thumb extends React.Component {
                 width: 0.4,
                 height: 0.4,
                 borderRadius: 0.2,
-                borderColor: 'red',
+                borderColor: 'blue',
                 borderWidth: 0.01
             },
             text: {
