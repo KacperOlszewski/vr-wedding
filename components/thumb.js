@@ -14,10 +14,9 @@ export class Thumb extends React.Component {
 
         this.state = {
             name: props.user.name,
+            fbId: props.user.fbId,
             uri: null
         };
-
-        this.getImg(props);
 
         this.styles = StyleSheet.create({
             thumb: {
@@ -35,8 +34,12 @@ export class Thumb extends React.Component {
         });
     }
 
-    getImg(props) {
-        http.get(`http://graph.facebook.com/${props.user.fbId}/?fields=picture`)
+    componentDidMount() {
+        this.getImg();
+    }
+
+    getImg() {
+        http.get(`http://graph.facebook.com/${this.state.fbId}/?fields=picture`)
             .then(
                 (fbImg) => {
                     this.setState({
@@ -44,14 +47,14 @@ export class Thumb extends React.Component {
                     });
                 },
                 (err) => {
-                    console.log('Mamy błęd')
+                    console.log('Thumb error', err)
                 }
             );
     }
 
     render() {
         return (
-            <View style={{display: 'flex', flexDirection: 'column', margin: 0.1}}>
+            <View style={{flexDirection: 'column', margin: 0.1}}>
                 <Image source={{uri: this.state.uri}}
                        style={this.styles.thumb} />
 

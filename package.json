@@ -8,6 +8,9 @@
     "copy_assets": "cp prod/index.html ./vr/build/ && cp -R static_assets ./vr/build/",
     "open": "node -e \"require('xopen')('http://localhost:8081/vr/')\"",
     "devtools": "react-devtools",
+    "start-server": "node start-server.js & echo $! >>server.pid",
+    "restart-server": "if [ -f server.pid ]; then kill -9 `cat server.pid` && rm server.pid && npm run start-server; else npm run start-server; fi",
+    "stop-server": "if [ -f server.pid ]; then kill -9 `cat server.pid` && rm server.pid; fi",
     "test": "jest"
   },
   "dependencies": {

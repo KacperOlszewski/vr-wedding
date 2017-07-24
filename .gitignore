@@ -2,8 +2,10 @@
 *~
 *.log
 *.js.meta
+tmp/
 node_modules/
 build/
 vr/build/
 .idea/workspace.xml
 .idea/
+server.pid
