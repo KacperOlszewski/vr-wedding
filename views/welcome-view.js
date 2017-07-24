@@ -14,9 +14,9 @@ export class WelcomeView extends React.Component {
     constructor() {
         super();
         this.state = {
-            welcomeText: "Cześć",
-            bounceValue: new Animated.Value(1),
-            bounceOut: new Animated.Value(0.8)
+            yes: "Tak!",
+            progress: false,
+            bounceValue: new Animated.Value(1)
         };
 
         this.styles = StyleSheet.create({
@@ -56,11 +56,18 @@ export class WelcomeView extends React.Component {
     }
 
     yes() {
+        if (this.state.progress) return;
+
         const user = this.props.user;
         user.going = true;
+        this.state.progress = true;
 
         http.post(`/api/user/going`, user).then(
             (succ) => {
+                this.setState({
+                    yes: "Wspaniale :)",
+                });
+
                 Animated.timing(
                     this.state.bounceValue,
                     {
@@ -70,11 +77,15 @@ export class WelcomeView extends React.Component {
                 ).start();
 
                 setTimeout(
-                    () => this.props.setGoing(), 361
+                    () => {
+                        this.props.setGoing();
+                        this.state.progress = false;
+                    }, 361
                 );
             },
             (err) => {
                 console.log('error');
+                this.state.progress = false;
             }
         );
     }
@@ -90,7 +101,7 @@ export class WelcomeView extends React.Component {
                 </Text>
 
                 <Button
-                    text='Tak!'
+                    text={this.state.yes}
                     callback={() => this.yes()}/>
             </Animated.View>
         );

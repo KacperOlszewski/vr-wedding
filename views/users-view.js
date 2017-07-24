@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-    View
+    View,
+    Text
 } from 'react-vr';
 
 import { http } from '../vr/utils/http';
@@ -37,6 +38,7 @@ export class UsersView extends React.Component {
         return (
             <View style={{
                     flexDirection: 'row',
+                    flexWrap: 'wrap',
                     alignItems: 'center',
                     justifyContent: 'center',
                     width: 6,

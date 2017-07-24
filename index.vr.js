@@ -102,8 +102,6 @@ export default class WeddingSite extends React.Component {
                     </WelcomeView>
                 }
 
-
-
             </View>
         );
     }

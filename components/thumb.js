@@ -21,14 +21,14 @@ export class Thumb extends React.Component {
 
         this.styles = StyleSheet.create({
             thumb: {
-                width: 0.4,
-                height: 0.4,
-                borderRadius: 0.2,
-                borderColor: 'blue',
-                borderWidth: 0.01
+                width: 0.5,
+                height: 0.5,
+                borderRadius: 0.25,
+                borderColor: 'rgba(0,0,0,0.4)',
+                borderWidth: 0.02
             },
             text: {
-                width: 0.4,
+                width: 0.5,
                 fontSize: 0.1,
                 textAlign: 'center'
             }

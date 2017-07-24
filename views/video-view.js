@@ -20,21 +20,27 @@ export class VideoView extends React.Component {
             <View>
                 <View
                     style={{
-                        alignItems: 'center',
+                        backgroundColor: 'rgba(0,0,0,0.26)',
+                        borderRadius: 0.2,
                         layoutOrigin: [0.5, 0.5],
+                        padding: 0.2,
+                        alignItems: 'center',
                         transform: [
-                            {translate: [6, 0, 0]},
+                            {translate: [6, 2, 2]},
                             {rotateY: -90},
                         ]
                     }}>
                     <Video
-                        style={
-                            {height: 5, width: 2.75}
-                        }
+                        style={{
+                            height: 5,
+                            width: 2.75,
+                            borderColor: 'rgba(0,0,0,0.4)',
+                            borderWidth: 0.04
+                        }}
                         source={asset('video/wtf1.mp4', {format: 'mp4'})}
                         playerState={this.state.playerState}
                     />
-                    <VideoControl style={{height: 0.4, width: 4}} playerState={this.state.playerState} />
+                    <VideoControl style={{height: 0.2, width: 2.75}} playerState={this.state.playerState} />
                 </View>
             </View>
         );

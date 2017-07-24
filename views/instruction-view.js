@@ -2,7 +2,8 @@ import React from 'react';
 import {
     StyleSheet,
     Text,
-    Animated
+    Animated,
+    Plane
 } from 'react-vr';
 
 export class InstructionView extends React.Component {
