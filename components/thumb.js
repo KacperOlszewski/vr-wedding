@@ -14,13 +14,10 @@ export class Thumb extends React.Component {
     constructor(props) {
         super(props);
 
-        const isFemale = props.user.name.slice(-1) == "a";
-        const imagePath = 'default' + (isFemale ? "1" : "2") + ".jpg";
-
         this.state = {
             name: props.user.name,
             fbId: props.user.fbId,
-            uri: asset(imagePath)
+            uri: {uri: null}
         };
 
         this.styles = StyleSheet.create({
@@ -28,7 +25,7 @@ export class Thumb extends React.Component {
                 width: 0.5,
                 height: 0.5,
                 borderRadius: 0.25,
-                borderColor: 'rgba(0,0,0,0.4)',
+                borderColor: colors.primaryAlpha,
                 borderWidth: 0.02
             },
             text: {
@@ -54,10 +51,21 @@ export class Thumb extends React.Component {
                         });
                     },
                     (err) => {
-
+                        this.setDefaultImg();
                     }
                 );
+        } else {
+            this.setDefaultImg();
         }
+    }
+
+    setDefaultImg() {
+        const isFemale = this.state.name.slice(-1) == "a";
+        const imagePath = 'default' + (isFemale ? "1" : "2") + ".jpg";
+
+        this.setState({
+            uri: asset(imagePath)
+        });
     }
 
     render() {

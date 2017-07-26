@@ -23,7 +23,7 @@ export class WelcomeView extends React.Component {
         this.styles = StyleSheet.create({
             menu: {
                 width: 6,
-                backgroundColor: colors.background,
+                backgroundColor: colors.primaryAlpha,
                 borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
                 padding: 0.2,
@@ -98,7 +98,7 @@ export class WelcomeView extends React.Component {
         return (
             <Animated.View style={this.styles.menu}>
                 <Text style={this.styles.text}>
-                    Cześć cześć {this.props.user.name}, idziesz idziesz?
+                    {this.props.user.name}, wbijasz na naszą imprezę?
                 </Text>
 
                 <Button

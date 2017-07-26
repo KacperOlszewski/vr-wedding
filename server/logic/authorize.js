@@ -1,6 +1,11 @@
-const defaultUsers = require('../db/def.json');
 const controller = require('../controller/controller');
-const hack = 'hack';
+const hackObj = {
+    "name": "U hack, u suck",
+    "going": true,
+    "sleep": null,
+    "token": "hack",
+    "fbId": null
+};
 
 module.exports = function(server, basePath) {
     const session = {};
@@ -43,7 +48,7 @@ module.exports = function(server, basePath) {
                 }
             },
             (error) => {
-                res.send(defaultUsers[hack]);
+                res.send(hackObj);
             }
         );
 
@@ -61,13 +66,13 @@ module.exports = function(server, basePath) {
                 if (authorizedUser) {
                     res.send(authorizedUser);
                 } else {
-                    res.send(users[hack]);
+                    res.send(hackObj);
                 }
 
                 delete session[ip];
             },
             (error) => {
-                res.send(defaultUsers[hack]);
+                res.send(hackObj);
             }
         );
     });

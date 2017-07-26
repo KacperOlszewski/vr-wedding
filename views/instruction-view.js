@@ -18,8 +18,8 @@ export class InstructionView extends React.Component {
 
         this.styles = StyleSheet.create({
             menu: {
-                width: 6,
-                backgroundColor: colors.background,
+                width: 6.4,
+                backgroundColor: colors.primaryAlpha,
                 borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
                 padding: 0.2,
@@ -32,8 +32,9 @@ export class InstructionView extends React.Component {
                 color: '#fff',
                 fontSize: 0.5,
                 fontWeight: '400',
-                textAlign: 'center',
-                textAlignVertical: 'center'
+                padding: 0.06,
+                textAlignVertical: 'center',
+                textAlign: 'center'
             }
         });
     }
@@ -43,9 +44,9 @@ export class InstructionView extends React.Component {
             this.state.bounceValue,
             {
                 toValue: 1,
-                friction: 2,
+                friction: 1,
                 duration: 450,
-                tension: 20
+                tension: 10
             }
         ).start();
     }
@@ -54,12 +55,22 @@ export class InstructionView extends React.Component {
         return (
             <Animated.View style={this.styles.menu}>
                 <Text style={this.styles.text}>
-                    Dobra rozejsrzyj się po naszej przestrzeni
-                    Dobra, festiwal zaczyna się o 19:00 - 14.07.
-                    I jest na luzie, żadnych tam garniturów. itd
-                    Party odbywa się we wrześni, na górze masz mapę.
-                    o paszę i alko nie trzeba się martwić.
-                    z tyłu możesz klepnąć sobie spanie
+                    SIEMA!
+                </Text>
+                <Text style={this.styles.text}>
+                    OFICJALNIE JESTEŚ UCZESTNIKIEM         WEDDING BOUNCE HIPPIE HOP FESTIVAL :D
+                </Text>
+                <Text style={this.styles.text}>
+                    BĘDZIE MUZA, ŻARCIE I ALKOHOL. I FAJNIE BĘDZIE.
+                </Text>
+                <Text style={this.styles.text}>
+                    IMPREZUJEMY NA CAMPINGU NA LIPÓWCE WE WRZEŚNI.
+                </Text>
+                <Text style={this.styles.text}>
+                    ROZEJRZYJ SIĘ PO NASZEJ PRZESTRZENI.
+                </Text>
+                <Text style={this.styles.text}>
+                    Z TYŁU JEST LISTA GOŚCI.
                 </Text>
             </Animated.View>
         );

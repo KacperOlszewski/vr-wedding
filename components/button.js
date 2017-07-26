@@ -5,6 +5,8 @@ import {
     VrButton
 } from 'react-vr';
 
+import { colors } from './colors';
+
 export class Button extends React.Component {
     constructor() {
         super();
@@ -14,7 +16,7 @@ export class Button extends React.Component {
                 display: 'flex',
                 padding: 0.1,
                 margin: 0.2,
-                backgroundColor: 'blue',
+                backgroundColor: colors.primary,
                 borderRadius: 0.2
             },
             text: {

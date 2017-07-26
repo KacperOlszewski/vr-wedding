@@ -61,7 +61,7 @@ export class VideoView extends React.Component {
                             style={{
                                 height: 5,
                                 width: 2.75,
-                                borderColor: colors.background,
+                                borderColor: colors.primaryAlpha,
                                 borderWidth: 0.04
                             }}
                             source={asset('video/wtf1.mp4', {format: 'mp4'})}
