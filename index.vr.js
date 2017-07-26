@@ -4,6 +4,8 @@ import { WelcomeView } from './views/welcome-view';
 import { InstructionView } from './views/instruction-view';
 import { UsersView } from './views/users-view';
 import { VideoView } from './views/video-view';
+import { SleepView } from './views/sleep-view';
+import { SoundView } from './views/sound-view';
 
 import {
     AppRegistry,
@@ -21,11 +23,13 @@ export default class WeddingSite extends React.Component {
         this.setInitialState();
         this.start();
         this.userIsGoing = this.userIsGoing.bind(this);
+        this.userIsSleeping = this.userIsSleeping.bind(this);
     }
 
     setInitialState() {
         this.state = {
             willGo: true,
+            willSleep: false,
             user: {
                 name: ''
             }
@@ -42,13 +46,20 @@ export default class WeddingSite extends React.Component {
         });
     }
 
+    userIsSleeping() {
+        this.setState({
+            willSleep: true
+        });
+    }
+
     start() {
         http.get(`/api/user/authorized`)
             .then(
                 (user) => {
                     this.setState({
                         user: user,
-                        willGo: user.going
+                        willGo: user.going,
+                        willSleep: user.sleep
                     });
                 },
                 (err) => {
@@ -59,6 +70,7 @@ export default class WeddingSite extends React.Component {
 
     render() {
         const willGo = this.state.willGo;
+        const willSleep =  this.state.willSleep;
 
         return (
             <View>
@@ -91,11 +103,26 @@ export default class WeddingSite extends React.Component {
                     </View>
                 }
 
+                {willGo &&
+                    <View style={this.styles.view}>
+                        <SoundView></SoundView>
+                    </View>
+                }
+
                 {!willGo &&
                     <WelcomeView
                         setGoing={this.userIsGoing}
                         user={this.state.user}>
                     </WelcomeView>
+                }
+
+                {(!willSleep && willGo) &&
+                    <View style={this.styles.view}>
+                        <SleepView
+                            setSleeping={this.userIsSleeping}
+                            user={this.state.user}>
+                        </SleepView>
+                    </View>
                 }
 
             </View>

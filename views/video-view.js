@@ -18,10 +18,10 @@ export class VideoView extends React.Component {
         super(props);
         this.state = {
             playerState: new MediaPlayerState({autoPlay: false, muted: false}),
-            zoom: -22,
-            x: 10,
-            y: 4,
-            rotate: 90
+            zoom: -27,
+            x: 11,
+            y: 17.6,
+            rotate: 111
 
         };
 
@@ -32,10 +32,10 @@ export class VideoView extends React.Component {
         if (this.triggered) return;
 
         this.setState({
-            zoom: -5,
+            zoom: -4,
             rotate: 122,
-            x: 3.8,
-            y: 1.2
+            x: 3.6,
+            y: 1.1
         });
         this.state.playerState.play();
         this.triggered = true;
@@ -53,7 +53,7 @@ export class VideoView extends React.Component {
                         alignItems: 'center',
                         transform: [
                             {translate: [this.state.zoom, this.state.y, this.state.x]},
-                            {rotateY: this.state.rotate},
+                            {rotateY: this.state.rotate}
                         ]
                     }}>
                     <VrButton onClick={() => this.triggerPlayer()}>
@@ -67,7 +67,7 @@ export class VideoView extends React.Component {
                             source={asset('video/wtf1.mp4', {format: 'mp4'})}
                             playerState={this.state.playerState}
                         />
-                        <VideoControl style={{height: 0.2, width: 2.75}} playerState={this.state.playerState} />
+                        <VideoControl style={{height: 0.3, width: 2.75}} playerState={this.state.playerState} />
                     </VrButton>
                 </View>
             </View>

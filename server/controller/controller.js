@@ -32,8 +32,26 @@ const controller = {
             }
         );
     },
+    userSleep: function (updatedUser, success, error) {
+        this.getUsers(
+            (users) => {
+                users[updatedUser.token].sleep = updatedUser.sleep;
+                fs.writeFile('./server/db/users.json', JSON.stringify(users), (err) => {
+                    this.writing = false;
+                    if (err) {
+                        error();
+                    } else {
+                        success();
+                    }
+                });
+            },
+            () => {
+                error();
+            }
+        );
+    },
     usersGoing: function(success, error) {
-        var start = new Date().getTime();
+        //var start = new Date().getTime();
 
         this.getUsers(
             (users) => {

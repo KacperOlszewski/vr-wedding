@@ -7,6 +7,7 @@ import {
 } from 'react-vr';
 
 import { http } from '../vr/utils/http';
+import { colors } from './colors';
 
 export class Thumb extends React.Component {
     constructor(props) {

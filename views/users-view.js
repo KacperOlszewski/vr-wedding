@@ -37,22 +37,37 @@ export class UsersView extends React.Component {
         });
 
         return (
-            <View style={{
+            <View>
+                <View style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transform: [
+                        {translate: [0.1, -0.7, 6]},
+                        {rotateY: -170}
+                    ]
+                }}>
+                    <Text style={{
+                        color: '#fff',
+                        fontSize: 0.3,
+                        fontWeight: '400',
+                        textAlign: 'left'}}>
+                        Weeding guests ;)
+                    </Text>
+                </View>
+                <View style={{
                     display: 'flex',
                     flexDirection: 'row',
                     flexWrap: 'wrap',
                     width: 5.2,
-                    height: 'auto',
-                    borderRadius: 0.25,
                     layoutOrigin: [0.5, 0.5],
                     transform: [
-                        {translate: [2.7, -1.8, 6]},
-                        {rotateY: -170},
-                        {rotateX: 10},
+                        {translate: [2.7, -2.2, 6]},
+                        {rotateY: -180}
                     ]
                 }}>
-                {thumbs}
+                    {thumbs}
+                </View>
             </View>
-        );
+        )
     }
 }
