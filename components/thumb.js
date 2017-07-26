@@ -29,6 +29,7 @@ export class Thumb extends React.Component {
             text: {
                 width: 0.5,
                 fontSize: 0.1,
+                height: 0.1,
                 textAlign: 'center'
             }
         });
@@ -54,7 +55,7 @@ export class Thumb extends React.Component {
 
     render() {
         return (
-            <View style={{flexDirection: 'column', margin: 0.1}}>
+            <View style={{flexDirection: 'column', padding: 0.18}}>
                 <Image source={{uri: this.state.uri}}
                        style={this.styles.thumb} />
 

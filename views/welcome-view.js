@@ -7,7 +7,8 @@ import {
 } from 'react-vr';
 
 import { http } from '../vr/utils/http';
-import { Button } from '../components/button'
+import { Button } from '../components/button';
+import { colors } from '../components/colors'
 
 export class WelcomeView extends React.Component {
 
@@ -22,7 +23,7 @@ export class WelcomeView extends React.Component {
         this.styles = StyleSheet.create({
             menu: {
                 width: 6,
-                backgroundColor: 'rgba(0,0,0,0.26)',
+                backgroundColor: colors.background,
                 borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
                 padding: 0.2,

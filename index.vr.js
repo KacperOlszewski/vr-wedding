@@ -7,15 +7,11 @@ import { VideoView } from './views/video-view';
 
 import {
     AppRegistry,
-    AsyncStorage,
     asset,
     Pano,
     Text,
     View,
-    AmbientLight,
-    StyleSheet,
-    Input,
-    TextInput
+    StyleSheet
 } from 'react-vr';
 
 export default class WeddingSite extends React.Component {
@@ -68,12 +64,12 @@ export default class WeddingSite extends React.Component {
             <View>
                 <Pano source={
                     [
-                        asset('wall-left.jpg'),
-                        asset('wall-right.jpg'),
-                        asset('wall-top.jpg'),
-                        asset('wall-bottom.jpg'),
-                        asset('wall-back.jpg'),
-                        asset('wall-front.jpg')
+                        asset('wall-left-min.jpg'),
+                        asset('wall-right-min.jpg'),
+                        asset('wall-top-min.jpg'),
+                        asset('wall-bottom-min.jpg'),
+                        asset('wall-back-min.jpg'),
+                        asset('wall-front-min.jpg')
                     ]
                 }/>
 

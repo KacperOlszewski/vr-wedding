@@ -6,6 +6,8 @@ import {
     Plane
 } from 'react-vr';
 
+import { colors } from '../components/colors';
+
 export class InstructionView extends React.Component {
 
     constructor() {
@@ -17,7 +19,7 @@ export class InstructionView extends React.Component {
         this.styles = StyleSheet.create({
             menu: {
                 width: 6,
-                backgroundColor: 'rgba(0,0,0,0.26)',
+                backgroundColor: colors.background,
                 borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
                 padding: 0.2,
