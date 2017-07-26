@@ -103,11 +103,13 @@ export default class WeddingSite extends React.Component {
                     </View>
                 }
 
+{/*
                 {willGo &&
                     <View style={this.styles.view}>
                         <SoundView></SoundView>
                     </View>
                 }
+*/}
 
                 {!willGo &&
                     <WelcomeView

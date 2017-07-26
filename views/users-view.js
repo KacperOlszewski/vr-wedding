@@ -21,6 +21,7 @@ export class UsersView extends React.Component {
         http.get(`/api/users/going`)
             .then(
                 (users) => {
+                    console.log(users);
                     this.setState({
                         users: users,
                     });

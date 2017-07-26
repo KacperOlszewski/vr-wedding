@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Image,
     Text,
-    View
+    View,
+    asset
 } from 'react-vr';
 
 import { http } from '../vr/utils/http';
@@ -13,10 +14,13 @@ export class Thumb extends React.Component {
     constructor(props) {
         super(props);
 
+        const isFemale = props.user.name.slice(-1) == "a";
+        const imagePath = 'default' + (isFemale ? "1" : "2") + ".jpg";
+
         this.state = {
             name: props.user.name,
             fbId: props.user.fbId,
-            uri: null
+            uri: asset(imagePath)
         };
 
         this.styles = StyleSheet.create({
@@ -41,23 +45,25 @@ export class Thumb extends React.Component {
     }
 
     getImg() {
-        http.get(`http://graph.facebook.com/${this.state.fbId}/?fields=picture`)
-            .then(
-                (fbImg) => {
-                    this.setState({
-                        uri: fbImg.picture.data.url
-                    });
-                },
-                (err) => {
-                    console.log('Thumb error', err)
-                }
-            );
+        if (this.state.fbId) {
+            http.get(`http://graph.facebook.com/${this.state.fbId}/?fields=picture`)
+                .then(
+                    (fbImg) => {
+                        this.setState({
+                            uri: {uri: fbImg.picture.data.url}
+                        });
+                    },
+                    (err) => {
+
+                    }
+                );
+        }
     }
 
     render() {
         return (
             <View style={{flexDirection: 'column', padding: 0.18}}>
-                <Image source={{uri: this.state.uri}}
+                <Image source={this.state.uri}
                        style={this.styles.thumb} />
 
                 <Text style={this.styles.text}>

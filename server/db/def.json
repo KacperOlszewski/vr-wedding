@@ -1,13 +1,73 @@
 {
-  "123456": {
-    "name": "Muszla", "going": false, "sleep": false, "token": 123456, "fbId": 100000243531643
+  "19640": {
+    "name": "Kacper",
+    "going": true,
+    "sleep": true,
+    "token": 19640,
+    "fbId": 100001101840940
   },
-
-  "234567": {
-    "name": "Szwajc", "going": true, "sleep": false, "token": 234567, "fbId": 100000243531643
+  "85939": {
+    "name": "Ewa",
+    "going": false,
+    "sleep": false,
+    "token": 85939,
+    "fbId": 100000869242253
+  },
+  "21854": {
+    "name": "Mates",
+    "going": false,
+    "sleep": false,
+    "token": 21854,
+    "fbId": 100000839452139
+  },
+  "37911": {
+    "name": "Ania",
+    "going": false,
+    "sleep": false,
+    "token": 37911,
+    "fbId": null
+  },
+  "44345": {
+    "name": "Ola",
+    "going": false,
+    "sleep": false,
+    "token": 44345,
+    "fbId": 617331728
+  },
+  "73281": {
+    "name": "Krzysiu",
+    "going": false,
+    "sleep": false,
+    "token": 73281,
+    "fbId": 100000682929036
+  },
+  "20941": {
+    "name": "Kinia",
+    "going": false,
+    "sleep": false,
+    "token": 20941,
+    "fbId": 100000526683114
+  },
+  "51622": {
+    "name": "Łukasz",
+    "going": false,
+    "sleep": false,
+    "token": 51622,
+    "fbId": 100001791478004
+  },
+  "82215": {
+    "name": "Wiącek",
+    "going": true,
+    "sleep": false,
+    "token": 82215,
+    "fbId": 100002948332041
   },
 
   "hack": {
-    "name": "U hack, u suck", "going": false, "sleep": null, "token": 123456
+    "name": "U hack, u suck",
+    "going": false,
+    "sleep": null,
+    "token": "hack",
+    "fbId": null
   }
 }
