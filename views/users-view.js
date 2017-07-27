@@ -21,13 +21,12 @@ export class UsersView extends React.Component {
         http.get(`/api/users/going`)
             .then(
                 (users) => {
-                    console.log(users);
                     this.setState({
                         users: users,
                     });
                 },
                 (err) => {
-                    console.log('Mamy błęd')
+                    console.error('fetch users error', err);
                 }
             );
     }
@@ -44,15 +43,15 @@ export class UsersView extends React.Component {
                     flexDirection: 'column',
                     transform: [
                         {translate: [0.1, -0.7, 6]},
-                        {rotateY: -170}
+                        {rotateY: -180}
                     ]
                 }}>
                     <Text style={{
                         color: '#fff',
-                        fontSize: 0.3,
+                        fontSize: 0.25,
                         fontWeight: '400',
                         textAlign: 'left'}}>
-                        Weeding guests ;)
+                        WEEDING GUESTS:
                     </Text>
                 </View>
                 <View style={{

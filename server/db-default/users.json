@@ -1,62 +1,62 @@
 {
   "19640": {
-    "name": "Kacper",
+    "name": "KACPER",
     "going": true,
     "sleep": true,
     "token": 19640,
     "fbId": 100001101840940
   },
   "85939": {
-    "name": "Ewa",
+    "name": "EWA",
     "going": false,
     "sleep": false,
     "token": 85939,
     "fbId": 100000869242253
   },
   "21854": {
-    "name": "Mates",
+    "name": "MATES",
     "going": false,
     "sleep": false,
     "token": 21854,
     "fbId": 100000839452139
   },
   "37911": {
-    "name": "Ania",
+    "name": "ANIA",
     "going": false,
     "sleep": false,
     "token": 37911,
     "fbId": null
   },
   "44345": {
-    "name": "Ola",
+    "name": "OLA",
     "going": false,
     "sleep": false,
     "token": 44345,
     "fbId": 617331728
   },
   "73281": {
-    "name": "Krzysiu",
+    "name": "KRZYSIU",
     "going": false,
     "sleep": false,
     "token": 73281,
     "fbId": 100000682929036
   },
   "20941": {
-    "name": "Kinia",
+    "name": "KINIA",
     "going": false,
     "sleep": false,
     "token": 20941,
     "fbId": 100000526683114
   },
   "51622": {
-    "name": "Łukasz",
+    "name": "ŁUKASZ",
     "going": false,
     "sleep": false,
     "token": 51622,
     "fbId": 100001791478004
   },
   "82215": {
-    "name": "Wiącek",
+    "name": "WIĄCEK",
     "going": true,
     "sleep": false,
     "token": 82215,
@@ -64,7 +64,7 @@
   },
 
   "hack": {
-    "name": "U hack, u suck",
+    "name": "U HACK, U SUCK",
     "going": false,
     "sleep": null,
     "token": "hack",

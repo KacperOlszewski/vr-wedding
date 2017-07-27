@@ -3,7 +3,9 @@ import {
     StyleSheet,
     Text,
     View,
-    Animated
+    Animated,
+    Image,
+    asset
 } from 'react-vr';
 
 import { http } from '../vr/utils/http';
@@ -15,27 +17,33 @@ export class WelcomeView extends React.Component {
     constructor() {
         super();
         this.state = {
-            yes: "Tak!",
+            yes: "TAK!",
             progress: false,
             bounceValue: new Animated.Value(1)
         };
 
         this.styles = StyleSheet.create({
             menu: {
-                width: 6,
-                backgroundColor: colors.primaryAlpha,
-                borderRadius: 0.2,
+                height: 6.0,
+                width: 9.6,
                 layoutOrigin: [0.5, 0.5],
-                padding: 0.2,
                 transform: [
                     {translate: [0, 0, -8]},
                     {scale: this.state.bounceValue}
                 ]
             },
+            image: {
+                height: 6.0,
+                width: 9.6,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            },
             text: {
-                color: '#fff',
+                color: colors.fontBlack,
+                paddingTop: 0.2,
                 fontSize: 0.5,
-                fontWeight: '400',
+                fontWeight: '500',
                 textAlign: 'center',
                 textAlignVertical: 'center'
             }
@@ -66,7 +74,7 @@ export class WelcomeView extends React.Component {
         http.post(`/api/user/going`, user).then(
             (succ) => {
                 this.setState({
-                    yes: "Wspaniale :)",
+                    yes: "WYSPANIALE",
                 });
 
                 Animated.timing(
@@ -85,8 +93,11 @@ export class WelcomeView extends React.Component {
                 );
             },
             (err) => {
-                console.log('error');
                 this.state.progress = false;
+
+                this.setState({
+                    yes: "ERROR :(",
+                });
             }
         );
     }
@@ -94,16 +105,19 @@ export class WelcomeView extends React.Component {
 
 
     render() {
+        const imagePath = 'icons/interface.png';
 
         return (
             <Animated.View style={this.styles.menu}>
-                <Text style={this.styles.text}>
-                    {this.props.user.name}, wbijasz na naszą imprezę?
-                </Text>
+                <Image style={this.styles.image} source={asset(imagePath)}>
+                    <Text style={this.styles.text}>
+                        {this.props.user.name}, WBIJASZ NA IMPREZĘ?
+                    </Text>
 
-                <Button
-                    text={this.state.yes}
-                    callback={() => this.yes()}/>
+                    <Button
+                        text={this.state.yes}
+                        callback={() => this.yes()}/>
+                </Image>
             </Animated.View>
         );
     }

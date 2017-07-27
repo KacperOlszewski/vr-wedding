@@ -7,6 +7,7 @@ import {
 } from 'react-vr';
 
 import { colors } from '../components/colors';
+import { Flamingo } from '../components/flamingo';
 
 export class InstructionView extends React.Component {
 
@@ -18,11 +19,14 @@ export class InstructionView extends React.Component {
 
         this.styles = StyleSheet.create({
             menu: {
-                width: 6.4,
+                width: 6.2,
                 backgroundColor: colors.primaryAlpha,
-                borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
                 padding: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
                 transform: [
                     {translate: [0, 0, -8]},
                     {scale: this.state.bounceValue}
@@ -30,9 +34,9 @@ export class InstructionView extends React.Component {
             },
             text: {
                 color: '#fff',
-                fontSize: 0.5,
+                fontSize: 0.45,
                 fontWeight: '400',
-                padding: 0.06,
+                padding: 0.05,
                 textAlignVertical: 'center',
                 textAlign: 'center'
             }
@@ -45,8 +49,8 @@ export class InstructionView extends React.Component {
             {
                 toValue: 1,
                 friction: 1,
-                duration: 450,
-                tension: 10
+                duration: 350,
+                tension: 20
             }
         ).start();
     }
@@ -54,9 +58,6 @@ export class InstructionView extends React.Component {
     render() {
         return (
             <Animated.View style={this.styles.menu}>
-                <Text style={this.styles.text}>
-                    SIEMA!
-                </Text>
                 <Text style={this.styles.text}>
                     OFICJALNIE JESTEŚ UCZESTNIKIEM         WEDDING BOUNCE HIPPIE HOP FESTIVAL :D
                 </Text>
@@ -70,8 +71,9 @@ export class InstructionView extends React.Component {
                     ROZEJRZYJ SIĘ PO NASZEJ PRZESTRZENI.
                 </Text>
                 <Text style={this.styles.text}>
-                    Z TYŁU JEST LISTA GOŚCI.
+                    Z TYŁU JEST LISTA GOŚCI I KLEPNĄĆ SPANIE MOŻNA.
                 </Text>
+                <Flamingo></Flamingo>
             </Animated.View>
         );
     }

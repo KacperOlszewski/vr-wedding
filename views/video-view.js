@@ -33,7 +33,7 @@ export class VideoView extends React.Component {
 
         this.setState({
             zoom: -4,
-            rotate: 122,
+            rotate: 132,
             x: 3.6,
             y: 1.1
         });
@@ -46,8 +46,8 @@ export class VideoView extends React.Component {
             <View>
                 <View
                     style={{
-                        backgroundColor: 'rgba(0,0,0,0.26)',
-                        borderRadius: 0.2,
+                        backgroundColor: colors.background,
+                        borderRadius: 0.14,
                         layoutOrigin: [0.5, 0.5],
                         padding: 0.2,
                         alignItems: 'center',
@@ -59,15 +59,13 @@ export class VideoView extends React.Component {
                     <VrButton onClick={() => this.triggerPlayer()}>
                         <Video
                             style={{
-                                height: 5,
-                                width: 2.75,
-                                borderColor: colors.primaryAlpha,
-                                borderWidth: 0.04
+                                height: 4.8,
+                                width: 2.75
                             }}
                             source={asset('video/wtf1.mp4', {format: 'mp4'})}
                             playerState={this.state.playerState}
                         />
-                        <VideoControl style={{height: 0.3, width: 2.75}} playerState={this.state.playerState} />
+                        <VideoControl style={{height: 0.4, width: 2.75}} playerState={this.state.playerState} />
                     </VrButton>
                 </View>
             </View>

@@ -24,11 +24,14 @@ export class SleepView extends React.Component {
             menu: {
                 width: 6,
                 backgroundColor: colors.background,
-                borderRadius: 0.2,
                 layoutOrigin: [0.5, 0.5],
                 padding: 0.2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
                 transform: [
-                    {translate: [-4.2, -6, 10]},
+                    {translate: [-6.0, -7.2, 10]},
                     {scale: this.state.bounceValue},
                     {rotateY: 180}
                 ]
@@ -67,7 +70,7 @@ export class SleepView extends React.Component {
         http.post(`/api/user/sleep`, user).then(
             (succ) => {
                 this.setState({
-                    yes: "Ok :)",
+                    yes: "OK",
                 });
 
                 Animated.timing(
@@ -86,8 +89,10 @@ export class SleepView extends React.Component {
                 );
             },
             (err) => {
-                console.log('error');
-                this.state.progress = false;
+                this.setState({
+                    yes: "ERROR :(",
+                    progress: false
+                });
             }
         );
     }
@@ -99,7 +104,7 @@ export class SleepView extends React.Component {
         return (
             <Animated.View style={this.styles.menu}>
                 <Text style={this.styles.text}>
-                    Tak orientacyjnie, chcesz klepać nocleg w domku?
+                    CHCESZ KLEPNĄĆ NOCLEG W DOMKU?
                 </Text>
 
                 <Button

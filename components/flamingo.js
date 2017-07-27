@@ -7,29 +7,25 @@ import {
     asset
 } from 'react-vr';
 
-import { colors } from './colors';
-
 export class Flamingo extends React.Component {
     constructor() {
         super();
 
         this.styles = StyleSheet.create({
             icon: {
-                width: 0.5,
-                height: 0.5,
-                borderRadius: 0.25,
-                borderColor: colors.primaryAlpha,
-                borderWidth: 0.02
+                width: 1,
+                height: 1,
+                margin: 0.1
             },
         });
     }
 
     render() {
-        const imagePath = 'default1.jpg';
+        const imagePath = 'icons/badge.png';
 
         return (
             <Image source={asset(imagePath)}
-                   style={this.styles.thumb} />
+                   style={this.styles.icon} />
         );
     }
 }

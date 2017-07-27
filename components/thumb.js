@@ -24,9 +24,7 @@ export class Thumb extends React.Component {
             thumb: {
                 width: 0.5,
                 height: 0.5,
-                borderRadius: 0.25,
-                borderColor: colors.primaryAlpha,
-                borderWidth: 0.02
+                borderRadius: 0.25
             },
             text: {
                 width: 0.5,
@@ -61,7 +59,7 @@ export class Thumb extends React.Component {
 
     setDefaultImg() {
         const isFemale = this.state.name.slice(-1) == "a";
-        const imagePath = 'default' + (isFemale ? "1" : "2") + ".jpg";
+        const imagePath = 'icons/default' + (isFemale ? "1" : "2") + ".jpg";
 
         this.setState({
             uri: asset(imagePath)
