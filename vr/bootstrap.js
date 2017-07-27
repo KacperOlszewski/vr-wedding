@@ -4,8 +4,6 @@ export function bootstrap(bundle, parent, options) {
     destroyPasswordSection();
 
     const vr = new VRInstance(bundle, 'WeddingSite', parent, {
-        cursorVisibility: 'visible',
-        setCursor: 'grab',
         ...options
     });
 
@@ -14,6 +12,7 @@ export function bootstrap(bundle, parent, options) {
     };
 
     vr.start();
+
     return vr;
 }
 

@@ -6,6 +6,7 @@
     "token": 19640,
     "fbId": 100001101840940
   },
+
   "85939": {
     "name": "EWA",
     "going": false,
@@ -13,6 +14,7 @@
     "token": 85939,
     "fbId": 100000869242253
   },
+
   "21854": {
     "name": "MATES",
     "going": false,
@@ -20,6 +22,7 @@
     "token": 21854,
     "fbId": 100000839452139
   },
+
   "37911": {
     "name": "ANIA",
     "going": false,
@@ -27,27 +30,23 @@
     "token": 37911,
     "fbId": null
   },
+
   "44345": {
-    "name": "OLA",
+    "name": "OLA Ś",
     "going": false,
     "sleep": false,
     "token": 44345,
     "fbId": 617331728
   },
+
   "73281": {
     "name": "KRZYSIU",
     "going": false,
     "sleep": false,
     "token": 73281,
-    "fbId": 100000682929036
+    "fbId": null
   },
-  "20941": {
-    "name": "KINIA",
-    "going": false,
-    "sleep": false,
-    "token": 20941,
-    "fbId": 100000526683114
-  },
+
   "51622": {
     "name": "ŁUKASZ",
     "going": false,
@@ -55,12 +54,261 @@
     "token": 51622,
     "fbId": 100001791478004
   },
+
+  "20941": {
+    "name": "KINIA",
+    "going": false,
+    "sleep": false,
+    "token": 20941,
+    "fbId": null
+  },
+
   "82215": {
     "name": "WIĄCEK",
-    "going": true,
+    "going": false,
     "sleep": false,
     "token": 82215,
     "fbId": 100002948332041
+  },
+
+  "65011": {
+    "name": "BASIA",
+    "going": false,
+    "sleep": false,
+    "token": 65011,
+    "fbId": 100002394595357
+  },
+
+  "21462": {
+    "name": "GRZYBO",
+    "going": false,
+    "sleep": false,
+    "token": 21462,
+    "fbId": null
+  },
+
+  "78972": {
+    "name": "PAULINKA",
+    "going": false,
+    "sleep": false,
+    "token": 78972,
+    "fbId": 100001907940246
+  },
+
+  "11032": {
+    "name": "SZAFA",
+    "going": false,
+    "sleep": false,
+    "token": 11032,
+    "fbId": 100001873990656
+  },
+
+  "65264": {
+    "name": "MICHAŁ",
+    "going": false,
+    "sleep": false,
+    "token": 65264,
+    "fbId": 100001489878857
+  },
+
+  "72404": {
+    "name": "WERA",
+    "going": false,
+    "sleep": false,
+    "token": 72404,
+    "fbId": 100001458984714
+  },
+
+  "45991": {
+    "name": "DIANA",
+    "going": false,
+    "sleep": false,
+    "token": 45991,
+    "fbId": 100000972424799
+  },
+
+  "78023": {
+    "name": "SZWAJC",
+    "going": false,
+    "sleep": false,
+    "token": 78023,
+    "fbId": 100000965363610
+  },
+
+  "86556": {
+    "name": "NADINA",
+    "going": false,
+    "sleep": false,
+    "token": 86556,
+    "fbId": 100000914599235
+  },
+
+  "46860": {
+    "name": "HONIA",
+    "going": false,
+    "sleep": false,
+    "token": 46860,
+    "fbId": 100000870877826
+  },
+
+  "94714": {
+    "name": "KASIA K",
+    "going": false,
+    "sleep": false,
+    "token": 94714,
+    "fbId": 100000764215254
+  },
+
+  "86756": {
+    "name": "JASIU",
+    "going": false,
+    "sleep": false,
+    "token": 86756,
+    "fbId": 100000750248317
+  },
+
+  "39026": {
+    "name": "ŚWINIAK",
+    "going": false,
+    "sleep": false,
+    "token": 39026,
+    "fbId": 100000728335567
+  },
+
+  "99244": {
+    "name": "MADZIA G",
+    "going": false,
+    "sleep": false,
+    "token": 99244,
+    "fbId": 100000668825535
+  },
+
+  "69640": {
+    "name": "GRUBY",
+    "going": false,
+    "sleep": false,
+    "token": 69640,
+    "fbId": 100000557143158
+  },
+
+  "49905": {
+    "name": "JANUSZ",
+    "going": false,
+    "sleep": false,
+    "token": 49905,
+    "fbId": 100000335257507
+  },
+
+  "22411": {
+    "name": "MUSZLA",
+    "going": false,
+    "sleep": false,
+    "token": 22411,
+    "fbId": 100000243531643
+  },
+
+  "32253": {
+    "name": "ORLOV",
+    "going": false,
+    "sleep": false,
+    "token": 32253,
+    "fbId": 100000138406097
+  },
+
+  "63930": {
+    "name": "DOBROCH",
+    "going": false,
+    "sleep": false,
+    "token": 63930,
+    "fbId": 1735698831
+  },
+
+  "53610": {
+    "name": "KOSMALA",
+    "going": false,
+    "sleep": false,
+    "token": 53610,
+    "fbId": 1442057339
+  },
+
+  "16968": {
+    "name": "JESSICA",
+    "going": false,
+    "sleep": false,
+    "token": 16968,
+    "fbId": 1435002072
+  },
+
+  "37300": {
+    "name": "MADZIA W",
+    "going": false,
+    "sleep": false,
+    "token": 37300,
+    "fbId": 100000742305853
+  },
+
+  "73934": {
+    "name": "EMI",
+    "going": false,
+    "sleep": false,
+    "token": 73934,
+    "fbId": 100000697083617
+  },
+
+  "92415": {
+    "name": "SEBA",
+    "going": false,
+    "sleep": false,
+    "token": 92415,
+    "fbId": null
+  },
+
+  "13824": {
+    "name": "ROMKA",
+    "going": false,
+    "sleep": false,
+    "token": 13824,
+    "fbId": 100000418176332
+  },
+
+  "92620": {
+    "name": "KATKA",
+    "going": false,
+    "sleep": false,
+    "token": 92620,
+    "fbId": 1789165867
+  },
+
+  "40900": {
+    "name": "SONIA",
+    "going": false,
+    "sleep": false,
+    "token": 40900,
+    "fbId": 1083859055
+  },
+
+  "36388": {
+    "name": "OLA G",
+    "going": false,
+    "sleep": false,
+    "token": 36388,
+    "fbId": 100001111175080
+  },
+
+  "25743": {
+    "name": "MACIEJ",
+    "going": false,
+    "sleep": false,
+    "token": 25743,
+    "fbId": 100000625054255
+  },
+
+  "87058": {
+    "name": "TOMEK",
+    "going": false,
+    "sleep": false,
+    "token": 87058,
+    "fbId": 1260639444
   },
 
   "hack": {

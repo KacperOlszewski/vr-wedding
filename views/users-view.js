@@ -40,15 +40,15 @@ export class UsersView extends React.Component {
             <View>
                 <View style={{
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'row',
                     transform: [
-                        {translate: [0.1, -0.7, 6]},
+                        {translate: [-0.84, -0.36, 6]},
                         {rotateY: -180}
                     ]
                 }}>
                     <Text style={{
                         color: '#fff',
-                        fontSize: 0.25,
+                        fontSize: 0.28,
                         fontWeight: '400',
                         textAlign: 'left'}}>
                         WEEDING GUESTS:
@@ -58,10 +58,10 @@ export class UsersView extends React.Component {
                     display: 'flex',
                     flexDirection: 'row',
                     flexWrap: 'wrap',
-                    width: 5.2,
+                    width: 6.4,
                     layoutOrigin: [0.5, 0.5],
                     transform: [
-                        {translate: [2.7, -2.2, 6]},
+                        {translate: [2.62, -2.68, 6]},
                         {rotateY: -180}
                     ]
                 }}>

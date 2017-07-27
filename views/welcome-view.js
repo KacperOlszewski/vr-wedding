@@ -89,7 +89,7 @@ export class WelcomeView extends React.Component {
                     () => {
                         this.props.setGoing();
                         this.state.progress = false;
-                    }, 361
+                    }, 370
                 );
             },
             (err) => {
@@ -102,16 +102,30 @@ export class WelcomeView extends React.Component {
         );
     }
 
+    truncateName(fullName) {
+        const pattern = /\s([a-zA-Z])$/;
+        const name = fullName;
 
+        if (pattern.test(name)) {
+            const toRemove = pattern.exec(name)[0];
+
+            console.log(pattern.exec(name)[0], name.replace(toRemove,''));
+
+            return name.replace(toRemove,'');
+        } else {
+            return name;
+        }
+    }
 
     render() {
+        const name = this.truncateName(this.props.user.name);
         const imagePath = 'icons/interface.png';
 
         return (
             <Animated.View style={this.styles.menu}>
                 <Image style={this.styles.image} source={asset(imagePath)}>
                     <Text style={this.styles.text}>
-                        {this.props.user.name}, WBIJASZ NA IMPREZĘ?
+                        {name}, WBIJASZ NA IMPREZĘ?
                     </Text>
 
                     <Button

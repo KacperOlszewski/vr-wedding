@@ -6,6 +6,7 @@ import { UsersView } from './views/users-view';
 import { VideoView } from './views/video-view';
 import { SleepView } from './views/sleep-view';
 import { SoundView } from './views/sound-view';
+import { Logout } from './views/logout-view';
 
 import {
     AppRegistry,
@@ -103,13 +104,11 @@ export default class WeddingSite extends React.Component {
                     </View>
                 }
 
-{/*
                 {willGo &&
                     <View style={this.styles.view}>
-                        <SoundView></SoundView>
+                        <Logout></Logout>
                     </View>
                 }
-*/}
 
                 {!willGo &&
                     <WelcomeView

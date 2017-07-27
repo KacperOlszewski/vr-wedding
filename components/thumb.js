@@ -29,7 +29,7 @@ export class Thumb extends React.Component {
             text: {
                 width: 0.5,
                 fontSize: 0.1,
-                height: 0.1,
+                height: 0.12,
                 textAlign: 'center'
             }
         });
@@ -58,7 +58,7 @@ export class Thumb extends React.Component {
     }
 
     setDefaultImg() {
-        const isFemale = this.state.name.slice(-1) == "a";
+        const isFemale = this.state.name.slice(-1) == "A";
         const imagePath = 'icons/default' + (isFemale ? "1" : "2") + ".jpg";
 
         this.setState({
@@ -68,7 +68,7 @@ export class Thumb extends React.Component {
 
     render() {
         return (
-            <View style={{flexDirection: 'column', padding: 0.18}}>
+            <View style={{flexDirection: 'column', margin: 0.17}}>
                 <Image source={this.state.uri}
                        style={this.styles.thumb} />
 
