@@ -52,7 +52,6 @@ const controller = {
     },
     usersGoing: function(success, error) {
         //var start = new Date().getTime();
-
         this.getUsers(
             (users) => {
                 const goingUsers = [];

@@ -71,6 +71,7 @@ export class InstructionView extends React.Component {
                     ROZEJRZYJ SIĘ PO NASZEJ PRZESTRZENI.
                 </Text>
                 <Text style={this.styles.text}>
+                    DRESS CODE: FRYWOLNE HIPPIE.
                     Z TYŁU JEST LISTA GOŚCI I KLEPNĄĆ SPANIE MOŻNA.
                 </Text>
                 <Flamingo></Flamingo>

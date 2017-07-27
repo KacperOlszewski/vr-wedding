@@ -1,8 +1,8 @@
 const controller = require('../controller/controller');
 const hackObj = {
     "name": "U hack, u suck",
-    "going": true,
-    "sleep": null,
+    "going": false,
+    "sleep": false,
     "token": "hack",
     "fbId": null
 };
@@ -56,8 +56,6 @@ module.exports = function(server, basePath) {
     });
 
     server.get(getUserEndpoint , (req, res) => {
-        const token = req.params.token;
-
         controller.getUsers(
             (users) => {
                 const ip = getIp(req);

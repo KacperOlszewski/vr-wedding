@@ -71,6 +71,14 @@
     "fbId": 100002948332041
   },
 
+  "16357": {
+    "name": "KASIA J",
+    "going": false,
+    "sleep": false,
+    "token": 16357,
+    "fbId": null
+  },
+
   "65011": {
     "name": "BASIA",
     "going": false,
@@ -314,7 +322,7 @@
   "hack": {
     "name": "U HACK, U SUCK",
     "going": false,
-    "sleep": null,
+    "sleep": false,
     "token": "hack",
     "fbId": null
   }
