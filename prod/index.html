@@ -17,18 +17,24 @@
         }
 
         input, button {
-            padding: 6px 12px;
-            width: 240px;
+            padding: 10px 12px;
+            width: 180px;
             margin: 6px;
             text-align: center;
-            font-size: 30px;
+            font-size: 26px;
             background-color: #fff;
-            font-weight: 500;
+            font-weight: 200;
+            border-width: 1px;
+        }
+
+        button {
+            width: auto;
         }
 
         #pass {
             letter-spacing: 0.22em;
             border: none;
+            box-sizing: border-box;
         }
 
         #pass.error {
@@ -40,6 +46,7 @@
 <body>
 
 <section id="password-section">
+    <img width="90" style="margin: 0 0 12px 0" src="static_assets/icons/badge.png">
     <input id="pass" type="text" placeholder="_ _ _ _ _" maxlength="5">
     <button type="submit" onclick="checkPass()">PODAJ PASS</button>
 </section>
