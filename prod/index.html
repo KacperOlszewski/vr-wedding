@@ -2,7 +2,7 @@
 <head>
     <title>Hippie Hop</title>
     <style>
-        body { margin: 0; }
+        body { margin: 0; color: #2C2C2C; }
 
         #password-section {
             display: none;
@@ -18,15 +18,21 @@
 
         input, button {
             padding: 6px 12px;
-            min-width: 240px;
+            width: 240px;
             margin: 6px;
             text-align: center;
-            font-size: 32px;
-            background-color: transparent;
+            font-size: 30px;
+            background-color: #fff;
+            font-weight: 500;
         }
 
         #pass {
             letter-spacing: 0.22em;
+            border: none;
+        }
+
+        #pass.error {
+            border: 1px dotted crimson;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
