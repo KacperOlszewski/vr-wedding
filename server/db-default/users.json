@@ -9,8 +9,8 @@
 
   "85939": {
     "name": "EWA",
-    "going": false,
-    "sleep": false,
+    "going": true,
+    "sleep": true,
     "token": 85939,
     "fbId": 100000869242253
   },
@@ -317,13 +317,5 @@
     "sleep": false,
     "token": 87058,
     "fbId": 1260639444
-  },
-
-  "hack": {
-    "name": "U HACK, U SUCK",
-    "going": false,
-    "sleep": false,
-    "token": "hack",
-    "fbId": null
   }
 }
