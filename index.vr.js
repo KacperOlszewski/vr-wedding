@@ -77,12 +77,12 @@ export default class WeddingSite extends React.Component {
             <View>
                 <Pano source={
                     [
-                        asset('wall-left-min.jpg'),
-                        asset('wall-right-min.jpg'),
-                        asset('wall-top-min.jpg'),
-                        asset('wall-bottom-min.jpg'),
-                        asset('wall-back-min.jpg'),
-                        asset('wall-front-min.jpg')
+                        asset('left.jpg'),
+                        asset('right.jpg'),
+                        asset('top.jpg'),
+                        asset('bottom.jpg'),
+                        asset('back.jpg'),
+                        asset('front.jpg')
                     ]
                 }/>
 
