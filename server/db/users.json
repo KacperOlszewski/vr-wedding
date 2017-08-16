@@ -317,5 +317,13 @@
     "sleep": false,
     "token": 87058,
     "fbId": 1260639444
+  },
+
+  "57385": {
+    "name": "KASIA G",
+    "going": false,
+    "sleep": false,
+    "token": 57385,
+    "fbId": null
   }
 }
